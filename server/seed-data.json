@@ -1,0 +1,72 @@
+{
+  "users": [
+    { "id": "00000000-0000-4000-8000-000000000001", "name": "Avery Morgan", "email": "admin@opshub.local", "role": "Admin" },
+    { "id": "00000000-0000-4000-8000-000000000002", "name": "Sam Rivera", "email": "sam@opshub.local", "role": "Member" },
+    { "id": "00000000-0000-4000-8000-000000000003", "name": "Riley Okafor", "email": "manager@opshub.local", "role": "Manager" },
+    { "id": "00000000-0000-4000-8000-000000000004", "name": "Taylor Chen", "email": "stores@opshub.local", "role": "Member" },
+    { "id": "00000000-0000-4000-8000-000000000005", "name": "Jordan Lee", "email": "service@opshub.local", "role": "Member" },
+    { "id": "00000000-0000-4000-8000-000000000006", "name": "Casey Patel", "email": "distribution@opshub.local", "role": "Member" }
+  ],
+  "sites": [
+    {
+      "siteId": "10000000-0000-4000-8000-000000000001", "slug": "central-stores", "name": "Central Stores", "description": "Retail inventory, supplier receiving and store replenishment.", "status": "Live", "release": 1,
+      "theme": { "accent": "#397a68", "canvas": "#f5f4ef", "ink": "#234b40", "label": "Fern" },
+      "modules": ["auth", "users", "shell", "inventory", "request", "analytics", "reports"],
+      "pages": [{ "id": "inventory", "label": "Inventory", "module": "inventory", "icon": "Package" }, { "id": "requests", "label": "Store requests", "module": "request", "icon": "ClipboardList" }, { "id": "analytics", "label": "Analytics", "module": "analytics", "icon": "Activity" }, { "id": "reports", "label": "Reports & Excel", "module": "reports", "icon": "FileSpreadsheet" }],
+      "roles": ["Public", "Member", "Manager", "Admin"]
+    },
+    {
+      "siteId": "10000000-0000-4000-8000-000000000002", "slug": "service-centre", "name": "Service Centre", "description": "Customer product repairs, warranty checks and service updates.", "status": "Live", "release": 1,
+      "theme": { "accent": "#c87952", "canvas": "#f8f3ed", "ink": "#60473a", "label": "Terracotta" },
+      "modules": ["auth", "users", "shell", "request", "approval", "pcb-repair", "returns", "analytics", "reports"],
+      "pages": [{ "id": "requests", "label": "Service queue", "module": "request", "icon": "ClipboardList" }, { "id": "approvals", "label": "Approvals", "module": "approval", "icon": "CheckCheck" }, { "id": "repairs", "label": "Product repairs", "module": "pcb-repair", "icon": "Wrench" }, { "id": "reports", "label": "Reports & Excel", "module": "reports", "icon": "FileSpreadsheet" }],
+      "roles": ["Public", "Member", "Manager", "Admin"]
+    },
+    {
+      "siteId": "10000000-0000-4000-8000-000000000003", "slug": "distribution", "name": "Distribution", "description": "Store replenishment, customer deliveries and route hand-offs.", "status": "Live", "release": 1,
+      "theme": { "accent": "#537e91", "canvas": "#f1f5f4", "ink": "#294b56", "label": "Harbor" },
+      "modules": ["auth", "users", "shell", "inventory", "request", "approval", "material-assignment", "assignment-ui", "consumption", "returns", "analytics", "reports"],
+      "pages": [{ "id": "inventory", "label": "Products", "module": "inventory", "icon": "Package" }, { "id": "requests", "label": "Store requests", "module": "request", "icon": "ClipboardList" }, { "id": "approvals", "label": "Approvals", "module": "approval", "icon": "CheckCheck" }, { "id": "assignments", "label": "Dispatch board", "module": "assignment-ui", "icon": "Boxes" }, { "id": "analytics", "label": "Analytics", "module": "analytics", "icon": "Activity" }],
+      "roles": ["Public", "Member", "Manager", "Admin"]
+    }
+  ],
+  "memberships": [
+    { "siteId": "10000000-0000-4000-8000-000000000001", "userId": "00000000-0000-4000-8000-000000000001", "role": "Admin" },
+    { "siteId": "10000000-0000-4000-8000-000000000002", "userId": "00000000-0000-4000-8000-000000000001", "role": "Admin" },
+    { "siteId": "10000000-0000-4000-8000-000000000003", "userId": "00000000-0000-4000-8000-000000000001", "role": "Admin" },
+    { "siteId": "10000000-0000-4000-8000-000000000001", "userId": "00000000-0000-4000-8000-000000000002", "role": "Member" },
+    { "siteId": "10000000-0000-4000-8000-000000000003", "userId": "00000000-0000-4000-8000-000000000002", "role": "Member" },
+    { "siteId": "10000000-0000-4000-8000-000000000001", "userId": "00000000-0000-4000-8000-000000000003", "role": "Manager" },
+    { "siteId": "10000000-0000-4000-8000-000000000002", "userId": "00000000-0000-4000-8000-000000000003", "role": "Manager" },
+    { "siteId": "10000000-0000-4000-8000-000000000003", "userId": "00000000-0000-4000-8000-000000000003", "role": "Manager" },
+    { "siteId": "10000000-0000-4000-8000-000000000001", "userId": "00000000-0000-4000-8000-000000000004", "role": "Member" },
+    { "siteId": "10000000-0000-4000-8000-000000000002", "userId": "00000000-0000-4000-8000-000000000005", "role": "Member" },
+    { "siteId": "10000000-0000-4000-8000-000000000003", "userId": "00000000-0000-4000-8000-000000000006", "role": "Member" }
+  ],
+  "inventory": [
+    { "id": "20000000-0000-4000-8000-000000000001", "siteId": "10000000-0000-4000-8000-000000000001", "sku": "PH-APL-16-128", "name": "Apple iPhone 16 128GB", "category": "Smartphones", "quantity": 48, "reorderAt": 12, "unit": "units", "price": 69900, "location": "Mobile zone / Rack A1" },
+    { "id": "20000000-0000-4000-8000-000000000002", "siteId": "10000000-0000-4000-8000-000000000001", "sku": "PH-SAM-S25-256", "name": "Samsung Galaxy S25 256GB", "category": "Smartphones", "quantity": 9, "reorderAt": 10, "unit": "units", "price": 80999, "location": "Mobile zone / Rack A2" },
+    { "id": "20000000-0000-4000-8000-000000000003", "siteId": "10000000-0000-4000-8000-000000000001", "sku": "LT-APL-MBA-M4", "name": "MacBook Air 13-inch M4 16GB", "category": "Laptops", "quantity": 7, "reorderAt": 8, "unit": "units", "price": 114900, "location": "Computing / Bay B1" },
+    { "id": "20000000-0000-4000-8000-000000000004", "siteId": "10000000-0000-4000-8000-000000000001", "sku": "TV-SNY-BR55-4K", "name": "Sony Bravia 55-inch 4K Google TV", "category": "Televisions", "quantity": 6, "reorderAt": 8, "unit": "units", "price": 72990, "location": "TV gallery / Bay C3" },
+    { "id": "20000000-0000-4000-8000-000000000005", "siteId": "10000000-0000-4000-8000-000000000001", "sku": "AU-JBL-T770NC", "name": "JBL Tune 770NC wireless headphones", "category": "Audio", "quantity": 24, "reorderAt": 10, "unit": "units", "price": 5999, "location": "Audio / Rack D2" },
+    { "id": "20000000-0000-4000-8000-000000000006", "siteId": "10000000-0000-4000-8000-000000000002", "sku": "SR-APL-IP15-BAT", "name": "iPhone 15 replacement battery", "category": "Phone service parts", "quantity": 12, "reorderAt": 4, "unit": "units", "price": 4500, "location": "Service desk / Secure bin 1" },
+    { "id": "20000000-0000-4000-8000-000000000007", "siteId": "10000000-0000-4000-8000-000000000002", "sku": "SR-SAM-S24-DSP", "name": "Galaxy S24 display assembly", "category": "Phone service parts", "quantity": 3, "reorderAt": 4, "unit": "units", "price": 12500, "location": "Service desk / Secure bin 2" },
+    { "id": "20000000-0000-4000-8000-000000000008", "siteId": "10000000-0000-4000-8000-000000000002", "sku": "SR-SNY-BR55-PWR", "name": "Bravia 55-inch TV power board", "category": "TV service parts", "quantity": 2, "reorderAt": 2, "unit": "units", "price": 7800, "location": "Workshop / Shelf S4" },
+    { "id": "20000000-0000-4000-8000-000000000009", "siteId": "10000000-0000-4000-8000-000000000003", "sku": "DS-APL-16-128", "name": "Apple iPhone 16 128GB", "category": "Smartphones", "quantity": 35, "reorderAt": 10, "unit": "units", "price": 69900, "location": "Dispatch hub / Zone A" },
+    { "id": "20000000-0000-4000-8000-000000000010", "siteId": "10000000-0000-4000-8000-000000000003", "sku": "DS-SNY-BR55-4K", "name": "Sony Bravia 55-inch 4K Google TV", "category": "Televisions", "quantity": 8, "reorderAt": 6, "unit": "units", "price": 72990, "location": "Dispatch hub / Bulky goods B" },
+    { "id": "20000000-0000-4000-8000-000000000011", "siteId": "10000000-0000-4000-8000-000000000003", "sku": "DS-LG-AC-15T", "name": "LG 1.5-ton Dual Inverter AC", "category": "Home appliances", "quantity": 5, "reorderAt": 4, "unit": "units", "price": 41990, "location": "Dispatch hub / Bulky goods A" },
+    { "id": "20000000-0000-4000-8000-000000000012", "siteId": "10000000-0000-4000-8000-000000000003", "sku": "DS-SAM-S25-256", "name": "Samsung Galaxy S25 256GB", "category": "Smartphones", "quantity": 18, "reorderAt": 6, "unit": "units", "price": 80999, "location": "Dispatch hub / Zone A" },
+    { "id": "20000000-0000-4000-8000-000000000013", "siteId": "10000000-0000-4000-8000-000000000003", "sku": "DS-APL-MBA-M4", "name": "MacBook Air 13-inch M4 16GB", "category": "Laptops", "quantity": 11, "reorderAt": 4, "unit": "units", "price": 114900, "location": "Dispatch hub / Secure cage" },
+    { "id": "20000000-0000-4000-8000-000000000014", "siteId": "10000000-0000-4000-8000-000000000003", "sku": "DS-JBL-T770NC", "name": "JBL Tune 770NC wireless headphones", "category": "Audio", "quantity": 30, "reorderAt": 8, "unit": "units", "price": 5999, "location": "Dispatch hub / Zone C" }
+  ],
+  "requests": [
+    { "id": "30000000-0000-4000-8000-000000000001", "siteId": "10000000-0000-4000-8000-000000000001", "title": "Restock iPhone 16 · Pune flagship", "requester": "Aarav Shah", "itemId": "20000000-0000-4000-8000-000000000001", "itemName": "Apple iPhone 16 128GB", "quantity": 12, "status": "Pending approval", "priority": "Normal", "createdAt": "2026-10-15T09:20:00.000Z" },
+    { "id": "30000000-0000-4000-8000-000000000002", "siteId": "10000000-0000-4000-8000-000000000001", "title": "Reorder Sony Bravia · low stock", "requester": "Mira Nair", "itemId": "20000000-0000-4000-8000-000000000004", "itemName": "Sony Bravia 55-inch 4K Google TV", "quantity": 4, "status": "Pending approval", "priority": "Urgent", "createdAt": "2026-10-16T08:05:00.000Z" },
+    { "id": "30000000-0000-4000-8000-000000000003", "siteId": "10000000-0000-4000-8000-000000000002", "title": "Neha Kapoor · iPhone battery service", "requester": "Neha Kapoor", "itemId": "20000000-0000-4000-8000-000000000006", "itemName": "iPhone 15 replacement battery", "quantity": 1, "status": "Pending approval", "priority": "Urgent", "createdAt": "2026-10-16T07:45:00.000Z" },
+    { "id": "30000000-0000-4000-8000-000000000004", "siteId": "10000000-0000-4000-8000-000000000003", "title": "Deliver iPhone 16 · Chennai store", "requester": "Ishan Rao", "itemId": "20000000-0000-4000-8000-000000000009", "itemName": "Apple iPhone 16 128GB", "quantity": 5, "status": "Pending approval", "priority": "Normal", "createdAt": "2026-10-14T12:15:00.000Z" },
+    { "id": "30000000-0000-4000-8000-000000000005", "siteId": "10000000-0000-4000-8000-000000000001", "title": "Transfer MacBook Air · Andheri store", "requester": "Rohan Mehta", "itemId": "20000000-0000-4000-8000-000000000003", "itemName": "MacBook Air 13-inch M4 16GB", "quantity": 2, "status": "Assigned", "priority": "Normal", "createdAt": "2026-10-11T10:30:00.000Z" }
+  ],
+  "assignments": [
+    { "id": "40000000-0000-4000-8000-000000000001", "siteId": "10000000-0000-4000-8000-000000000001", "requestId": "30000000-0000-4000-8000-000000000005", "itemId": "20000000-0000-4000-8000-000000000003", "itemName": "MacBook Air 13-inch M4 16GB", "quantity": 2, "assignee": "Rohan Mehta", "status": "Issued", "createdAt": "2026-10-16T11:00:00.000Z" }
+  ]
+}
