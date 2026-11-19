@@ -13,14 +13,7 @@ Open the Vite URL shown in the terminal (normally `http://localhost:5173`). The 
 
 Sign in with:
 
-| Role | Email | Password |
-| --- | --- | --- |
-| Admin | `admin@opshub.local` | `Demo2026!` |
-| Manager | `manager@opshub.local` | `Demo2026!` |
-| Member | `sam@opshub.local` | `Demo2026!` |
-| Central Stores | `stores@opshub.local` | `Demo2026!` |
-| Service Centre | `service@opshub.local` | `Demo2026!` |
-| Distribution | `distribution@opshub.local` | `Demo2026!` |
+The seeded demo account emails are listed in the local seed data. These accounts and their default passwords are intended **only for a local demo**. Do not reuse demo credentials or expose a demo instance publicly. If you run the app locally, inspect `server/seed-data.json` for the seeded accounts and reset/change credentials before any non-demo use.
 
 ## PostgreSQL mode
 
