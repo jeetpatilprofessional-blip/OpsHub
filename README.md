@@ -61,3 +61,10 @@ npm run seed   # Seed PostgreSQL demo tenants (requires DATABASE_URL)
 - `docs/architecture.md` and `docs/module-registry.md` — architecture, data model, API, and module mapping.
 
 This is a working prototype, not a production deployment. The no-database demo adapter is intentionally ephemeral. PostgreSQL persistence is available through the included schema and Compose service; production hardening still requires deployment secrets, rate limiting, audit retention, migrations, and operational backups.
+
+
+## Security / prototype boundaries
+
+- Offline demo mode uses a predictable demo password and the default JWT signing secret unless overridden. This is strictly for local demonstration; never expose it publicly or use real data.
+- The server's CORS policy is permissive. Restrict origins and review deployment security before hosting.
+- The tenant-scoped PostgreSQL paths include membership checks and transaction-scoped tenant context, but the in-memory demo mode is not a production persistence/security substitute. No independent penetration test has been performed.
